@@ -436,6 +436,7 @@ bool asst::AdbController::screencap(cv::Mat& image_payload, bool allow_reconnect
 bool asst::AdbController::screencap(const std::string& cmd, const DecodeFunc& decode_func, bool allow_reconnect,
                                     bool by_socket)
 {
+    Log.DEBUG("CMD is ",cmd);
     if ((!m_support_socket || !m_server_started) && by_socket) [[unlikely]] {
         return false;
     }
